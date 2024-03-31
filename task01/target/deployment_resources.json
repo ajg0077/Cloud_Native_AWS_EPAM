@@ -1,14 +1,14 @@
 {
-  "cmtr-928c0d10-hello_world-test" : {
-    "name" : "cmtr-928c0d10-hello_world-test",
+  "hello_world" : {
+    "name" : "hello_world",
     "lambda_path" : "D:\\Projects\\AWS\\Epam_AWS_Cloud_Native\\3_serverless_task\\task01",
     "version" : "1.0.0",
-    "func_name" : "com.task01.Cmtr928C0D10HelloWorldTest",
+    "func_name" : "com.task01.HelloWorld",
     "deployment_package" : "task01-1.0.0.jar",
     "resource_type" : "lambda",
     "runtime" : "java11",
     "architectures" : [ "x86_64" ],
-    "iam_role_name" : "cmtr-928c0d10-hello_world-test-role",
+    "iam_role_name" : "hello_world-role",
     "memory" : 1024,
     "timeout" : 300,
     "subnet_ids" : [ ],

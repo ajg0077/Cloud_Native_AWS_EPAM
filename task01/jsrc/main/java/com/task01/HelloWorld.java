@@ -8,13 +8,13 @@ import com.syndicate.deployment.model.RetentionSetting;
 import java.util.HashMap;
 import java.util.Map;
 
-@LambdaHandler(lambdaName = "cmtr-928c0d10-hello_world-test",
-	roleName = "cmtr-928c0d10-hello_world-test-role",
+@LambdaHandler(lambdaName = "hello_world",
+	roleName = "hello_world-role",
 	isPublishVersion = true,
 	aliasName = "${lambdas_alias_name}",
 	logsExpiration = RetentionSetting.SYNDICATE_ALIASES_SPECIFIED
 )
-public class Cmtr928C0D10HelloWorldTest implements RequestHandler<Object, Map<String, Object>> {
+public class HelloWorld implements RequestHandler<Object, Map<String, Object>> {
 
 	public Map<String, Object> handleRequest(Object request, Context context) {
 		System.out.println("Hello from lambda");
