@@ -14,8 +14,6 @@ import com.syndicate.deployment.model.DeploymentRuntime;
 import com.syndicate.deployment.model.RetentionSetting;
 import com.syndicate.deployment.model.lambda.url.AuthType;
 import com.syndicate.deployment.model.lambda.url.InvokeMode;
-import com.task02.response.ErrorMessage;
-import com.task02.response.HelloMessage;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
@@ -50,8 +48,7 @@ public class HelloLambda implements RequestHandler<APIGatewayProxyRequestEvent, 
 	@Override
 	public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent apiGatewayProxyRequestEvent, Context context) {
 		context.getLogger().log(apiGatewayProxyRequestEvent.toString());
-		Map<String, String> message = new HashMap<>();
-		message.put("message","Hello from Lambda");
+		Map<String, String> message = Map.of("statusCode", "200", "message","Hello from Lambda");
 		try {
 			return new APIGatewayProxyResponseEvent()
 					.withStatusCode(SC_OK)
@@ -59,8 +56,9 @@ public class HelloLambda implements RequestHandler<APIGatewayProxyRequestEvent, 
 		} catch (IllegalArgumentException exception) {
 			return new APIGatewayProxyResponseEvent()
 					.withStatusCode(SC_BAD_REQUEST)
-					.withBody(gson.toJson(new ErrorMessage(exception.getMessage())));
+					.withBody("Invalid");
 		}
 	}
+
 
 }

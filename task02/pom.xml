@@ -19,11 +19,11 @@
     </properties>
 
     <dependencies>
-        <!--AWS dependencies-->
+        <!-- AWS dependencies-->
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-core</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.0</version>
         </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
@@ -59,7 +59,7 @@
             <resource>
                 <directory>${resources.dir}</directory>
             </resource>
-        </resources>
+        </resources>        
         <plugins>
             <plugin>
                 <groupId>net.sf.aws-syndicate</groupId>
@@ -67,7 +67,7 @@
                 <version>${syndicate.java.plugin.version}</version>
                 <configuration>
                     <packages>
-                        <package>com.demolayerurl</package>
+                        <package>com.task02</package>
                     </packages>
                     <fileName>${project.name}-${project.version}.jar</fileName>
                 </configuration>
