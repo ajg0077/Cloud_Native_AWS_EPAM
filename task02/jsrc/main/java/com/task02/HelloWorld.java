@@ -39,26 +39,13 @@ import java.util.Optional;
 		authType = AuthType.NONE,
 		invokeMode = InvokeMode.BUFFERED
 )
-public class HelloWorld implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+public class HelloWorld implements RequestHandler<Object, Map<String, Object>> {
 
-	private static final int SC_OK = 200;
-	private static final int SC_BAD_REQUEST = 400;
-	private final Gson gson = new Gson();
-
-	@Override
-	public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent apiGatewayProxyRequestEvent, Context context) {
-		context.getLogger().log(apiGatewayProxyRequestEvent.toString());
-		Map<String, String> message = Map.of("statusCode", "200", "message","Hello from Lambda");
-		try {
-			return new APIGatewayProxyResponseEvent()
-					.withStatusCode(SC_OK)
-					.withBody(gson.toJson(message));
-		} catch (IllegalArgumentException exception) {
-			return new APIGatewayProxyResponseEvent()
-					.withStatusCode(SC_BAD_REQUEST)
-					.withBody("Invalid");
-		}
+	public Map<String, Object> handleRequest(Object request, Context context) {
+		System.out.println("Hello from lambda");
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("statusCode", 200);
+		resultMap.put("message", "Hello from Lambda");
+		return resultMap;
 	}
-
-
 }
