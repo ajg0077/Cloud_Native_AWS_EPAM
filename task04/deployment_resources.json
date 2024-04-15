@@ -19,7 +19,8 @@
             "sqs:DeleteMessage",
             "sqs:GetQueueAttributes",
             "sqs:PurgeQueue",
-            "sqs:GetQueueUrl"
+            "sqs:GetQueueUrl",
+            "lambda:AddPermission"
           ],
           "Effect": "Allow",
           "Resource": "*"
@@ -33,7 +34,7 @@
     "predefined_policies": [],
     "principal_service": "lambda",
     "custom_policies": [
-      "lambda-sqs-execution"
+      "lambda-sqs-execution","AWSLambdaSQSQueueExecutionRole"
     ],
     "resource_type": "iam_role",
     "allowed_accounts": [
@@ -60,7 +61,8 @@
             "sns:Subscribe",
             "sns:Receive",
             "sns:DeleteTopic",
-            "sns:ListTopics"
+            "sns:ListTopics",
+            "lambda:AddPermission"
           ],
           "Effect": "Allow",
           "Resource": "*"
@@ -74,7 +76,8 @@
     "predefined_policies": [],
     "principal_service": "lambda",
     "custom_policies": [
-      "lambda-sns-execution"
+      "lambda-sns-execution",
+      "AmazonSNSRole"
     ],
     "resource_type": "iam_role",
     "allowed_accounts": [

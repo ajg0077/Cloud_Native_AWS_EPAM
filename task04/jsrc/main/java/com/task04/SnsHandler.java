@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SnsEventSource(targetTopic = "lambda_topic")
+@DependsOn(resourceType = ResourceType.SNS_TOPIC, name = "lambda_topic")
 @LambdaHandler(lambdaName = "sns_handler",
         roleName = "sns_handler-role",
         isPublishVersion = true,
