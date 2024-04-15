@@ -31,10 +31,10 @@
     "resource_type": "iam_policy"
   },
   "sqs_handler-role": {
-    "predefined_policies": [],
+    "predefined_policies": ["AWSLambdaSQSQueueExecutionRole"],
     "principal_service": "lambda",
     "custom_policies": [
-      "lambda-sqs-execution","AWSLambdaSQSQueueExecutionRole"
+      "lambda-sqs-execution"
     ],
     "resource_type": "iam_role",
     "allowed_accounts": [
@@ -73,11 +73,10 @@
     "resource_type": "iam_policy"
   },
   "sns_handler-role": {
-    "predefined_policies": [],
+    "predefined_policies": ["AmazonSNSRole"],
     "principal_service": "lambda",
     "custom_policies": [
-      "lambda-sns-execution",
-      "AmazonSNSRole"
+      "lambda-sns-execution"
     ],
     "resource_type": "iam_role",
     "allowed_accounts": [
