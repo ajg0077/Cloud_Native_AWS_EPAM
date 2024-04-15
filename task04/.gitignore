@@ -1,0 +1,6 @@
+.syndicate
+.syndicate-config-dev
+.syndicate-config-dev/*
+.idea
+.idea/*
+logs/
