@@ -14,15 +14,13 @@ import com.syndicate.deployment.model.RetentionSetting;
 import java.util.HashMap;
 import java.util.Map;
 
-@SqsTriggerEventSource(targetQueue = "async_queue",
-        batchSize = 10)
+
 @LambdaHandler(lambdaName = "sqs_handler",
         roleName = "sqs_handler-role",
-        isPublishVersion = true,
-        timeout = 10,
-        aliasName = "${lambdas_alias_name}",
-        logsExpiration = RetentionSetting.SYNDICATE_ALIASES_SPECIFIED
+        timeout = 10
 )
+@SqsTriggerEventSource(targetQueue = "async_queue", batchSize = 10)
+@DependsOn(name = "async_queue", resourceType = ResourceType.SQS_QUEUE)
 public class SqsHandler implements RequestHandler<SQSEvent, Void> {
 
     @Override
