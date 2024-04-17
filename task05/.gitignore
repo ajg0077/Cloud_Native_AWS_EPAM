@@ -1,0 +1,8 @@
+.syndicate
+.syndicate-config-dev
+.syndicate-config-dev/*
+.idea
+.idea/*
+target/*
+target
+logs/
